@@ -1,0 +1,29 @@
+{
+  "name": "priorityqueuejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evgkch/priorityqueuejs.git"
+  },
+  "keywords": [
+    "queue",
+    "priority",
+    "js"
+  ],
+  "author": "Evgeny Kucherenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/evgkch/priorityqueuejs/issues"
+  },
+  "homepage": "https://github.com/evgkch/priorityqueuejs#readme",
+  "devDependencies": {
+    "@types/jest": "^28.1.7",
+    "ts-jest": "^28.0.8"
+  }
+}
