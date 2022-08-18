@@ -33,17 +33,24 @@ export default class PriorityQueue {
         return Object.assign({}, __classPrivateFieldGet(this, _PriorityQueue_queue, "f")[0]);
     }
     remove(i) {
-        __classPrivateFieldGet(this, _PriorityQueue_queue, "f")[i].priority = Infinity;
-        __classPrivateFieldGet(this, _PriorityQueue_instances, "m", _PriorityQueue_shift_up).call(this, i);
-        this.extract_max();
+        if (__classPrivateFieldGet(this, _PriorityQueue_queue, "f")[i]) {
+            __classPrivateFieldGet(this, _PriorityQueue_queue, "f")[i].priority = Infinity;
+            __classPrivateFieldGet(this, _PriorityQueue_instances, "m", _PriorityQueue_shift_up).call(this, i);
+            return this.extract_max();
+        }
     }
 }
 _PriorityQueue_queue = new WeakMap(), _PriorityQueue_instances = new WeakSet(), _PriorityQueue_parent = function _PriorityQueue_parent(i) {
-    return Math.floor(i / 2);
+    if (i === 0) {
+        return 0;
+    }
+    else {
+        return Math.floor((i + 1) / 2) - 1;
+    }
 }, _PriorityQueue_left_child = function _PriorityQueue_left_child(i) {
-    return 2 * i;
-}, _PriorityQueue_right_child = function _PriorityQueue_right_child(i) {
     return 2 * i + 1;
+}, _PriorityQueue_right_child = function _PriorityQueue_right_child(i) {
+    return 2 * (i + 1);
 }, _PriorityQueue_swap = function _PriorityQueue_swap(i, j) {
     const x = __classPrivateFieldGet(this, _PriorityQueue_queue, "f")[i];
     const y = __classPrivateFieldGet(this, _PriorityQueue_queue, "f")[j];

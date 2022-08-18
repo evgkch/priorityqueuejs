@@ -11,5 +11,8 @@ export default class PriorityQueue<T> {
         priority: number;
         entity: T;
     };
-    remove(i: number): void;
+    remove(i: number): {
+        priority: number;
+        entity: T;
+    } | undefined;
 }
