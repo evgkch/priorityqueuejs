@@ -41,12 +41,7 @@ export default class PriorityQueue {
     }
 }
 _PriorityQueue_queue = new WeakMap(), _PriorityQueue_instances = new WeakSet(), _PriorityQueue_parent = function _PriorityQueue_parent(i) {
-    if (i === 0) {
-        return 0;
-    }
-    else {
-        return Math.floor((i + 1) / 2) - 1;
-    }
+    return i === 0 ? 0 : Math.ceil(i / 2) - 1;
 }, _PriorityQueue_left_child = function _PriorityQueue_left_child(i) {
     return 2 * i + 1;
 }, _PriorityQueue_right_child = function _PriorityQueue_right_child(i) {
