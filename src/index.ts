@@ -6,17 +6,21 @@ export default class PriorityQueue<T> {
 
     // Valid for ℤ+
     #parent(i: number) {
-        return Math.floor(i / 2);
+        if (i === 0) {
+            return 0;
+        } else {
+            return Math.floor((i + 1) / 2) - 1;
+        }
     }
 
     // Valid for ℤ+
     #left_child(i: number) {
-        return 2 * i;
+        return 2 * i + 1;
     }
 
     // Valid for ℤ+
     #right_child(i: number) {
-        return 2 * i + 1;
+        return 2 * (i + 1);
     }
 
     #swap(i: number, j: number) {
