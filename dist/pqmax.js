@@ -4,18 +4,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _PQMAX_instances, _PQMAX_queue, _PQMAX_shift_up, _PQMAX_shift_down;
-// @ts-nocheck
-export const parent = (i) => i === 0 ? 0 : Math.ceil(i / 2) - 1;
-// Valid for ℤ+
-export const left_child = (i) => 2 * i + 1;
-// Valid for ℤ+
-export const right_child = (i) => 2 * (i + 1);
-export const swap = (queue, i, j) => {
-    const x = queue[i];
-    const y = queue[j];
-    queue[i] = y;
-    queue[j] = x;
-};
+import { parent, swap, left_child, right_child } from './helpers.js';
 export default class PQMAX {
     constructor() {
         _PQMAX_instances.add(this);
